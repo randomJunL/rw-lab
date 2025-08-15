@@ -1,0 +1,8 @@
+- name: Alice Smith
+  role: Project Lead
+  avatar: bio-photo.jpg
+  bio: Ph.D student.
+- name: Bob Lee
+  role: Researcher
+  avatar: bio-photo.jpg
+  bio: Ph.D student.

@@ -1,0 +1,24 @@
+---
+title: Meet Our Team
+permalink: /team/
+layout: archive
+author_profile: true
+---
+{% include base_path %}
+
+<div class="team-list">
+    {% for member in site.data.team %}
+    <div class="author__avatar">
+        {% if member.avatar contains "://" %}
+        <img src="{{ member.avatar }}" alt="{{ member.name }}" fetchpriority="high" />
+        {% else %}
+        <img src="{{ member.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar"
+            alt="{{ member.name }}" fetchpriority="high" />
+        {% endif %}
+    </div>
+    <div class="author__content">
+        <h3 class="author__name">{{ member.name }}</h3>
+        {% if member.bio %}<p class="author__bio">{{ member.bio }}</p>{% endif %}
+    </div>
+    {% endfor %}
+</div>
