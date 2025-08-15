@@ -1,8 +1,15 @@
 - name: Alice Smith
-  role: Project Lead
+  role: Ph.D. Student
+  email: abcd@nmsu.edu
   avatar: bio-photo.jpg
-  bio: Ph.D student.
+  bio:
 - name: Bob Lee
-  role: Researcher
+  role: Ph.D. Student
+  email:
   avatar: bio-photo.jpg
-  bio: Ph.D student.
+  bio:
+- name: Kevin Brown
+  role: Ph.D. Student
+  email:
+  avatar: bio-photo.jpg
+  bio:

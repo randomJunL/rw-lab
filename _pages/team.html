@@ -3,22 +3,32 @@ title: Meet Our Team
 permalink: /team/
 layout: archive
 author_profile: true
+
 ---
+
 {% include base_path %}
 
-<div class="team-list">
+<div class="team__grid">
     {% for member in site.data.team %}
-    <div class="author__avatar">
-        {% if member.avatar contains "://" %}
-        <img src="{{ member.avatar }}" alt="{{ member.name }}" fetchpriority="high" />
-        {% else %}
-        <img src="{{ member.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar"
-            alt="{{ member.name }}" fetchpriority="high" />
-        {% endif %}
+    <div class="team__member">
+            <div class="member__avatar">
+                {% if member.avatar contains "://" %}
+                <img src="{{ member.avatar }}" alt="{{ member.name }}" fetchpriority="high" />
+                {% else %}
+                <img src="{{ member.avatar | prepend: "/images/" | prepend: base_path }}" class="member__avatar"
+                    alt="{{ member.name }}" fetchpriority="high" />
+                {% endif %}
+            </div>
+            <div class="member__content">
+                <h3 class="member__name">{{ member.name }}</h3>
+                <p class="member__role">{{ member.role }}</p>
+                {% if member.email %}
+                    <a href="mailto:{{ member.email }}">{{member.email}}</a>
+                {% endif %}
+                {% if member.bio %}<p class="member__bio">{{ member.bio }}</p>{% endif %}
+            </div>
     </div>
-    <div class="author__content">
-        <h3 class="author__name">{{ member.name }}</h3>
-        {% if member.bio %}<p class="author__bio">{{ member.bio }}</p>{% endif %}
-    </div>
+   
     {% endfor %}
 </div>
+
